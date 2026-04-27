@@ -144,6 +144,7 @@ export default function App() {
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [ctaFormOpen, setCtaFormOpen] = useState(false);
   const [ctaForm, setCtaForm] = useState({ name: '', phone: '', service: '', date: '' });
+  const [ctaSubmitted, setCtaSubmitted] = useState(false);
   const navRef = useRef(null);
 
   useEffect(() => {
@@ -901,88 +902,118 @@ export default function App() {
                 transition={{ duration: 0.4, type: "spring" }}
                 className="max-w-md mx-auto bg-white/80 backdrop-blur-xl rounded-2xl p-8 shadow-[0_20px_60px_rgba(59,130,246,0.12)] border border-blue-100"
               >
-                <div className="flex justify-between items-center mb-6">
-                  <h3 className="text-xl font-bold text-[#1e3a8a]">Book Appointment</h3>
-                  <button onClick={() => setCtaFormOpen(false)} className="p-1.5 rounded-full hover:bg-gray-100 transition-colors">
-                    <X size={18} className="text-gray-400" />
-                  </button>
-                </div>
-                <form className="flex flex-col gap-5 text-left" onSubmit={(e) => {
-                  e.preventDefault();
-                  if (ctaForm.phone.length !== 10 || !/^\d+$/.test(ctaForm.phone)) {
-                    return;
-                  }
-                  const msg = `🦷 *New Appointment Request*%0A%0A👤 *Name:* ${ctaForm.name}%0A📱 *Phone:* +91 ${ctaForm.phone}%0A🏥 *Service:* ${ctaForm.service || 'Not specified'}%0A📅 *Date:* ${ctaForm.date}%0A%0A_Sent from R.K. Dental Clinic Website_`;
-                  window.open(`https://wa.me/918433856648?text=${msg}`, '_blank');
-                  setCtaForm({ name: '', phone: '', service: '', date: '' });
-                  setCtaFormOpen(false);
-                }}>
-                  {/* Name */}
-                  <div className="group">
-                    <label className="text-[11px] font-bold text-[#1e3a8a] uppercase tracking-wider mb-1 block">Full Name</label>
-                    <input 
-                      type="text" 
-                      value={ctaForm.name}
-                      onChange={(e) => setCtaForm({...ctaForm, name: e.target.value})}
-                      className="w-full px-0 py-1.5 bg-transparent border-0 border-b border-gray-300 focus:outline-none focus:border-[#3b82f6] transition-all text-[#1e3a8a] font-medium"
-                      placeholder="Enter your name"
-                      required
-                    />
-                  </div>
-                  {/* Phone */}
-                  <div className="group">
-                    <label className="text-[11px] font-bold text-[#1e3a8a] uppercase tracking-wider mb-1 block">Mobile Number</label>
-                    <div className="flex gap-2">
-                      <span className="py-1.5 text-gray-500 border-b border-gray-300 text-sm">+91</span>
-                      <input 
-                        type="tel" 
-                        maxLength={10}
-                        value={ctaForm.phone}
-                        onChange={(e) => setCtaForm({...ctaForm, phone: e.target.value.replace(/\D/g, '')})}
-                        className="w-full px-0 py-1.5 bg-transparent border-0 border-b border-gray-300 focus:outline-none focus:border-[#3b82f6] transition-all text-[#1e3a8a] font-medium"
-                        placeholder="10-digit number"
-                        required
-                      />
-                    </div>
-                  </div>
-                  {/* Service */}
-                  <div>
-                    <label className="text-[11px] font-bold text-[#1e3a8a] uppercase tracking-wider mb-1 block">Service Required</label>
-                    <select 
-                      value={ctaForm.service}
-                      onChange={(e) => setCtaForm({...ctaForm, service: e.target.value})}
-                      className="w-full px-0 py-1.5 bg-transparent border-0 border-b border-gray-300 focus:outline-none focus:border-[#3b82f6] transition-all text-[#1e3a8a] font-medium cursor-pointer"
+                <AnimatePresence mode="wait">
+                  {ctaSubmitted ? (
+                    <motion.div
+                      key="success"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="text-center py-8"
                     >
-                      <option value="">Select Treatment</option>
-                      <option value="Root Canal Treatment">Root Canal Treatment</option>
-                      <option value="Dental Implants">Dental Implants</option>
-                      <option value="Braces & Aligners">Braces & Aligners</option>
-                      <option value="Teeth Whitening">Teeth Whitening</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-                  {/* Date */}
-                  <div className="group">
-                    <label className="text-[11px] font-bold text-[#1e3a8a] uppercase tracking-wider mb-1 block">Preferred Date</label>
-                    <input 
-                      type="date" 
-                      value={ctaForm.date}
-                      onChange={(e) => setCtaForm({...ctaForm, date: e.target.value})}
-                      className="w-full px-0 py-1.5 bg-transparent border-0 border-b border-gray-300 focus:outline-none focus:border-[#3b82f6] transition-all text-[#1e3a8a] font-medium cursor-pointer"
-                      required
-                    />
-                  </div>
-                  {/* Submit */}
-                  <motion.button
-                    type="submit"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="w-full bg-[#3b82f6] text-white py-3.5 font-bold rounded-full flex items-center justify-center gap-2 hover:bg-[#2563eb] transition-all shadow-[0_8px_24px_rgba(59,130,246,0.3)] mt-2"
-                  >
-                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 0 5.385 0 12.032c0 2.138.56 4.22 1.624 6.06L.234 23.364l5.412-1.42A12.022 12.022 0 0 0 12.032 24c6.646 0 12.03-5.386 12.03-12.033S18.677 0 12.03 0zm5.955 17.15c-.247.697-1.442 1.34-2.028 1.408-.545.064-1.229.176-3.864-.913-3.176-1.31-5.263-4.57-5.422-4.78-.158-.21-1.298-1.722-1.298-3.284 0-1.562.812-2.33 1.101-2.637.288-.308.625-.385.834-.385.208 0 .416.002.604.01.203.008.472-.075.738.568.273.66.932 2.27 1.013 2.436.082.167.136.363.029.576-.107.213-.162.346-.324.536-.16.19-.336.417-.482.553-.16.15-.327.316-.145.629.182.313.806 1.332 1.733 2.158 1.066 1.942 1.842 2.146 2.156.204.313.325.268.448.196.123-.072.585-.683.743-.918.158-.234.316-.195.545-.11.23.086 1.442.68 1.69.816.248.128.388.204.444.315.056.111.056.643-.191 1.34z"/></svg>
-                    Send via WhatsApp
-                  </motion.button>
-                </form>
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ type: "spring", bounce: 0.5, delay: 0.1 }}
+                        className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
+                      >
+                        <svg className="w-8 h-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </motion.div>
+                      <h3 className="text-xl font-bold text-[#1e3a8a] mb-2">Appointment Submitted!</h3>
+                      <p className="text-gray-500 text-sm">We'll get back to you shortly.</p>
+                    </motion.div>
+                  ) : (
+                    <motion.div key="form" exit={{ opacity: 0 }}>
+                      <div className="flex justify-between items-center mb-6">
+                        <h3 className="text-xl font-bold text-[#1e3a8a]">Book Appointment</h3>
+                        <button onClick={() => setCtaFormOpen(false)} className="p-1.5 rounded-full hover:bg-gray-100 transition-colors">
+                          <X size={18} className="text-gray-400" />
+                        </button>
+                      </div>
+                      <form className="flex flex-col gap-5 text-left" onSubmit={(e) => {
+                        e.preventDefault();
+                        if (ctaForm.phone.length !== 10 || !/^\d+$/.test(ctaForm.phone)) {
+                          return;
+                        }
+                        const msg = encodeURIComponent(`🦷 *New Appointment Request*\n\n👤 *Name:* ${ctaForm.name}\n📱 *Phone:* +91 ${ctaForm.phone}\n🏥 *Service:* ${ctaForm.service || 'Not specified'}\n📅 *Date:* ${ctaForm.date}\n\n_Sent from R.K. Dental Clinic Website_`);
+                        window.open(`https://wa.me/918433856648?text=${msg}`, '_blank');
+                        setCtaForm({ name: '', phone: '', service: '', date: '' });
+                        setCtaSubmitted(true);
+                        setTimeout(() => {
+                          setCtaSubmitted(false);
+                          setCtaFormOpen(false);
+                        }, 3000);
+                      }}>
+                        {/* Name */}
+                        <div className="group">
+                          <label className="text-[11px] font-bold text-[#1e3a8a] uppercase tracking-wider mb-1 block">Full Name</label>
+                          <input 
+                            type="text" 
+                            value={ctaForm.name}
+                            onChange={(e) => setCtaForm({...ctaForm, name: e.target.value})}
+                            className="w-full px-0 py-1.5 bg-transparent border-0 border-b border-gray-300 focus:outline-none focus:border-[#3b82f6] transition-all text-[#1e3a8a] font-medium"
+                            placeholder="Enter your name"
+                            required
+                          />
+                        </div>
+                        {/* Phone */}
+                        <div className="group">
+                          <label className="text-[11px] font-bold text-[#1e3a8a] uppercase tracking-wider mb-1 block">Mobile Number</label>
+                          <div className="flex gap-2">
+                            <span className="py-1.5 text-gray-500 border-b border-gray-300 text-sm">+91</span>
+                            <input 
+                              type="tel" 
+                              maxLength={10}
+                              value={ctaForm.phone}
+                              onChange={(e) => setCtaForm({...ctaForm, phone: e.target.value.replace(/\D/g, '')})}
+                              className="w-full px-0 py-1.5 bg-transparent border-0 border-b border-gray-300 focus:outline-none focus:border-[#3b82f6] transition-all text-[#1e3a8a] font-medium"
+                              placeholder="10-digit number"
+                              required
+                            />
+                          </div>
+                        </div>
+                        {/* Service */}
+                        <div>
+                          <label className="text-[11px] font-bold text-[#1e3a8a] uppercase tracking-wider mb-1 block">Service Required</label>
+                          <select 
+                            value={ctaForm.service}
+                            onChange={(e) => setCtaForm({...ctaForm, service: e.target.value})}
+                            className="w-full px-0 py-1.5 bg-transparent border-0 border-b border-gray-300 focus:outline-none focus:border-[#3b82f6] transition-all text-[#1e3a8a] font-medium cursor-pointer"
+                          >
+                            <option value="">Select Treatment</option>
+                            <option value="Root Canal Treatment">Root Canal Treatment</option>
+                            <option value="Dental Implants">Dental Implants</option>
+                            <option value="Braces & Aligners">Braces & Aligners</option>
+                            <option value="Teeth Whitening">Teeth Whitening</option>
+                            <option value="Other">Other</option>
+                          </select>
+                        </div>
+                        {/* Date */}
+                        <div className="group">
+                          <label className="text-[11px] font-bold text-[#1e3a8a] uppercase tracking-wider mb-1 block">Preferred Date</label>
+                          <input 
+                            type="date" 
+                            value={ctaForm.date}
+                            onChange={(e) => setCtaForm({...ctaForm, date: e.target.value})}
+                            className="w-full px-0 py-1.5 bg-transparent border-0 border-b border-gray-300 focus:outline-none focus:border-[#3b82f6] transition-all text-[#1e3a8a] font-medium cursor-pointer"
+                            required
+                          />
+                        </div>
+                        {/* Submit */}
+                        <motion.button
+                          type="submit"
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                          className="w-full bg-[#3b82f6] text-white py-3.5 font-bold rounded-full flex items-center justify-center gap-2 hover:bg-[#2563eb] transition-all shadow-[0_8px_24px_rgba(59,130,246,0.3)] mt-2"
+                        >
+                          Submit
+                        </motion.button>
+                      </form>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
             )}
           </motion.div>
