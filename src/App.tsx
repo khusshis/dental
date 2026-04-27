@@ -259,9 +259,9 @@ export default function App() {
             className="max-w-[1400px] mx-auto flex justify-between items-center w-full px-4 md:px-6 py-2 md:py-3"
           >
             {/* Logo */}
-            <div className="flex items-center cursor-pointer hover:scale-105 transition-transform z-10 h-14 md:h-16">
+            <div className="flex items-center cursor-pointer hover:scale-105 transition-transform z-10 h-14 lg:h-16 py-1 lg:py-0">
               <img src="/logo.png" alt="RK Logo" className="h-full w-auto object-contain drop-shadow-sm lg:hidden" />
-              <img src="/desktop-logo.png" alt="RK Dental Clinic" className="hidden lg:block h-full w-auto object-contain drop-shadow-sm py-2" />
+              <img src="/desktop-logo.png" alt="RK Dental Clinic" className="hidden lg:block h-7 xl:h-8 w-auto object-contain drop-shadow-sm" />
             </div>
             
             {/* Desktop Nav & Buttons */}
