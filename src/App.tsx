@@ -253,8 +253,8 @@ export default function App() {
             className="max-w-[1400px] mx-auto flex justify-between items-center w-full px-4 md:px-6 py-3 md:py-4"
           >
             {/* Logo */}
-            <div className="flex items-center gap-2 bg-[#1e3a8a] text-[#3b82f6] px-5 py-2.5 rounded-full cursor-pointer hover:scale-105 transition-transform z-10">
-              <span className="text-xl font-bold tracking-wider">rkclinic</span>
+            <div className="flex items-center cursor-pointer hover:scale-105 transition-transform z-10 h-16 md:h-20 -ml-2">
+              <img src="/logo.png" alt="RK Logo" className="h-full w-auto object-contain drop-shadow-md" />
             </div>
             
             {/* Desktop Nav & Buttons */}
