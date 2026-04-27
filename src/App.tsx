@@ -243,9 +243,15 @@ export default function App() {
     <div className="min-h-screen bg-[#f8fafc] text-[#333] font-sans pb-20 md:pb-0">
       {/* Header */}
       <motion.header 
-        className="fixed top-0 left-0 right-0 z-50 bg-[#0b1120]/85 backdrop-blur-xl shadow-lg border-b border-white/10 pointer-events-auto"
-        animate={{ y: isMobile ? (isNavVisible ? 0 : -100) : 0 }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl shadow-[0_4px_30px_rgba(29,78,216,0.3)] border-b border-blue-400/20 pointer-events-auto"
+        animate={{ 
+          y: isMobile ? (isNavVisible ? 0 : -100) : 0,
+          backgroundColor: ["rgba(30, 58, 138, 0.85)", "rgba(29, 78, 216, 0.85)", "rgba(30, 64, 175, 0.85)", "rgba(30, 58, 138, 0.85)"]
+        }}
+        transition={{ 
+          y: { duration: 0.3, ease: "easeInOut" },
+          backgroundColor: { duration: 10, repeat: Infinity, ease: "linear" }
+        }}
       >
         {/* Animated Gradient Border Bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-cyan-400 via-[#3b82f6] to-purple-500 opacity-80"></div>
