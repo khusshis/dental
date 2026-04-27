@@ -217,18 +217,18 @@ export default function App() {
   ];
 
   const treatments = [
-    { icon: <Activity className="w-8 h-8 text-[#3b82f6] stroke-[1.5]" />, name: "Root Canal\nTreatment (RCT)" },
-    { icon: <Shield className="w-8 h-8 text-[#3b82f6] stroke-[1.5]" />, name: "Dental Crowns" },
-    { icon: <Sparkles className="w-8 h-8 text-[#3b82f6] stroke-[1.5]" />, name: "Laser Dentistry" },
-    { icon: <Smile className="w-8 h-8 text-[#3b82f6] stroke-[1.5]" />, name: "Clear Aligners /\nInvisible Braces" },
-    { icon: <Heart className="w-8 h-8 text-[#3b82f6] stroke-[1.5]" />, name: "Dental Fillings /\nTeeth Fillings" },
-    { icon: <Activity className="w-8 h-8 text-[#3b82f6] stroke-[1.5]" />, name: "Wisdom Teeth\nRemoval" },
-    { icon: <Smile className="w-8 h-8 text-[#3b82f6] stroke-[1.5]" />, name: "Dental Braces &\nAligners" },
-    { icon: <Syringe className="w-8 h-8 text-[#3b82f6] stroke-[1.5]" />, name: "Dental Implants /\nTeeth Implants" },
-    { icon: <Smile className="w-8 h-8 text-[#3b82f6] stroke-[1.5]" />, name: "Dentures" },
-    { icon: <Baby className="w-8 h-8 text-[#3b82f6] stroke-[1.5]" />, name: "Kids Dentistry" },
-    { icon: <Activity className="w-8 h-8 text-[#3b82f6] stroke-[1.5]" />, name: "Mouth Ulcers" },
-    { icon: <Shield className="w-8 h-8 text-[#3b82f6] stroke-[1.5]" />, name: "Advanced Gum\nTreatment" },
+    { icon: <img src="/RCT.gif" alt="Root Canal Treatment" className="w-12 h-12 object-contain" />, name: "Root Canal\nTreatment (RCT)" },
+    { icon: <img src="/Crowns.gif" alt="Dental Crowns" className="w-12 h-12 object-contain" />, name: "Dental Crowns" },
+    { icon: <img src="/Laser-Treatment-1.gif" alt="Laser Dentistry" className="w-12 h-12 object-contain" />, name: "Laser Dentistry" },
+    { icon: <img src="/Invisible-Braces-1.gif" alt="Clear Aligners" className="w-12 h-12 object-contain" />, name: "Clear Aligners /\nInvisible Braces" },
+    { icon: <img src="/Dental-Fillings-1-1.gif" alt="Dental Fillings" className="w-12 h-12 object-contain" />, name: "Dental Fillings /\nTeeth Fillings" },
+    { icon: <img src="/Wisdom-Tooth-1.gif" alt="Wisdom Teeth" className="w-12 h-12 object-contain" />, name: "Wisdom Teeth\nRemoval" },
+    { icon: <img src="/Braces-2.gif" alt="Dental Braces" className="w-12 h-12 object-contain" />, name: "Dental Braces &\nAligners" },
+    { icon: <img src="/Dental-Implants.gif" alt="Dental Implants" className="w-12 h-12 object-contain" />, name: "Dental Implants /\nTeeth Implants" },
+    { icon: <img src="/Dentures.gif" alt="Dentures" className="w-12 h-12 object-contain" />, name: "Dentures" },
+    { icon: <Baby className="w-12 h-12 text-[#3b82f6] stroke-[1.5]" />, name: "Kids Dentistry" },
+    { icon: <Activity className="w-12 h-12 text-[#3b82f6] stroke-[1.5]" />, name: "Mouth Ulcers" },
+    { icon: <img src="/Gum-Treatment.gif" alt="Gum Treatment" className="w-12 h-12 object-contain" />, name: "Advanced Gum\nTreatment" },
   ];
 
   const scrollToTop = () => {
