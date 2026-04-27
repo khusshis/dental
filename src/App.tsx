@@ -325,7 +325,7 @@ export default function App() {
       {/* Hero Section */}
       <section className="relative bg-[#f0f9ff] overflow-hidden pt-28">
         <div className="max-w-[1400px] mx-auto px-6 py-10 md:py-16 flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 z-10 pr-4 lg:pr-12">
+          <div className="md:w-1/2 z-10 md:pr-4 lg:pr-12">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-blue-100 bg-white text-sm font-medium mb-6 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-[#3b82f6] animate-pulse"></span>
               <span className="text-gray-600">Trusted by <span className="text-[#1e3a8a] font-bold">2,000+</span> patients</span>
