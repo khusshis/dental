@@ -827,106 +827,123 @@ export default function App() {
         </div>
       </section>
       {/* Footer */}
-      <footer className="bg-[#1e3a8a] text-white pt-16 pb-24 md:pb-12 border-t-4 border-[#3b82f6] relative overflow-hidden">
-        {/* Decorative subtle pattern */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
-          <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-white blur-3xl"></div>
-          <div className="absolute bottom-0 -left-20 w-80 h-80 rounded-full bg-[#3b82f6] blur-3xl"></div>
+      <footer className="bg-[#f0f9ff] text-[#1e3a8a] pt-20 pb-28 md:pb-12 relative overflow-hidden">
+        {/* Animated Gradient Border Top */}
+        <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-blue-200 via-[#3b82f6] to-blue-200 opacity-80"></div>
+
+        {/* Animated decorative subtle pattern */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-60 pointer-events-none">
+          <motion.div 
+            animate={{ scale: [1, 1.2, 1], x: [0, 50, 0], y: [0, 30, 0] }}
+            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -top-40 -right-20 w-[500px] h-[500px] rounded-full bg-blue-200/50 blur-[100px]"
+          ></motion.div>
+          <motion.div 
+            animate={{ scale: [1, 1.3, 1], x: [0, -40, 0], y: [0, -50, 0] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -bottom-40 -left-20 w-[500px] h-[500px] rounded-full bg-blue-300/30 blur-[100px]"
+          ></motion.div>
         </div>
         
         <div className="max-w-[1400px] mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
             {/* Brand Column */}
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6 }}
             >
-              <div className="flex items-center gap-2 bg-white/10 w-max px-5 py-2.5 rounded-full mb-6 border border-white/20">
-                <span className="text-xl font-bold tracking-wider text-white">rkclinic</span>
+              <div className="flex items-center gap-2 bg-white/60 backdrop-blur-md w-max px-6 py-3 rounded-2xl mb-8 border border-white shadow-[0_4px_20px_rgba(59,130,246,0.05)]">
+                <span className="text-2xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6]">rkclinic</span>
               </div>
-              <p className="text-blue-100 text-sm leading-relaxed mb-6">
-                Transforming smiles with advanced dental care, state-of-the-art technology, and a commitment to your comfort.
+              <p className="text-gray-600 text-[15px] leading-relaxed mb-8 font-medium">
+                Transforming smiles with advanced dental care, state-of-the-art technology, and a commitment to your ultimate comfort.
               </p>
               <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#3b82f6] transition-colors border border-white/20">
-                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#3b82f6] transition-colors border border-white/20">
-                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#3b82f6] transition-colors border border-white/20">
-                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-                </a>
+                <motion.a whileHover={{ scale: 1.15, y: -4 }} whileTap={{ scale: 0.95 }} href="#" className="w-11 h-11 rounded-xl bg-white flex items-center justify-center text-[#3b82f6] hover:bg-[#3b82f6] hover:text-white hover:shadow-[0_8px_20px_rgba(59,130,246,0.3)] transition-all border border-blue-100 shadow-sm">
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                </motion.a>
+                <motion.a whileHover={{ scale: 1.15, y: -4 }} whileTap={{ scale: 0.95 }} href="#" className="w-11 h-11 rounded-xl bg-white flex items-center justify-center text-[#3b82f6] hover:bg-[#3b82f6] hover:text-white hover:shadow-[0_8px_20px_rgba(59,130,246,0.3)] transition-all border border-blue-100 shadow-sm">
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </motion.a>
+                <motion.a whileHover={{ scale: 1.15, y: -4 }} whileTap={{ scale: 0.95 }} href="#" className="w-11 h-11 rounded-xl bg-white flex items-center justify-center text-[#3b82f6] hover:bg-[#3b82f6] hover:text-white hover:shadow-[0_8px_20px_rgba(59,130,246,0.3)] transition-all border border-blue-100 shadow-sm">
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                </motion.a>
               </div>
             </motion.div>
 
             {/* Quick Links */}
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <h4 className="text-lg font-bold mb-6 text-white flex items-center gap-2">
-                <span className="w-2 h-2 bg-[#3b82f6] rounded-full"></span> Quick Links
+              <h4 className="text-xl font-bold mb-8 text-[#1e3a8a] flex items-center gap-3">
+                <span className="w-2 h-2 bg-[#3b82f6] rounded-full shadow-[0_0_10px_rgba(59,130,246,0.4)]"></span> Quick Links
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {['Home', 'About Clinic', 'Treatments', 'Patient Reviews', 'Contact Us'].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="text-blue-100 hover:text-white hover:pl-2 transition-all flex items-center gap-2 text-sm">
-                      <span className="text-[#3b82f6]">›</span> {item}
+                  <motion.li key={item} whileHover={{ x: 5 }}>
+                    <a href="#" className="text-gray-600 font-medium hover:text-[#3b82f6] transition-colors flex items-center gap-3 text-[15px]">
+                      <span className="text-[#3b82f6] text-lg">›</span> {item}
                     </a>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </motion.div>
 
             {/* Treatments */}
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h4 className="text-lg font-bold mb-6 text-white flex items-center gap-2">
-                <span className="w-2 h-2 bg-[#3b82f6] rounded-full"></span> Top Treatments
+              <h4 className="text-xl font-bold mb-8 text-[#1e3a8a] flex items-center gap-3">
+                <span className="w-2 h-2 bg-[#3b82f6] rounded-full shadow-[0_0_10px_rgba(59,130,246,0.4)]"></span> Top Treatments
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {['Root Canal Treatment', 'Dental Implants', 'Invisalign Aligners', 'Teeth Whitening', 'Kids Dentistry'].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="text-blue-100 hover:text-white hover:pl-2 transition-all flex items-center gap-2 text-sm">
-                      <span className="text-[#3b82f6]">›</span> {item}
+                  <motion.li key={item} whileHover={{ x: 5 }}>
+                    <a href="#" className="text-gray-600 font-medium hover:text-[#3b82f6] transition-colors flex items-center gap-3 text-[15px]">
+                      <span className="text-[#3b82f6] text-lg">›</span> {item}
                     </a>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </motion.div>
 
             {/* Contact Info */}
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <h4 className="text-lg font-bold mb-6 text-white flex items-center gap-2">
-                <span className="w-2 h-2 bg-[#3b82f6] rounded-full"></span> Contact Us
+              <h4 className="text-xl font-bold mb-8 text-[#1e3a8a] flex items-center gap-3">
+                <span className="w-2 h-2 bg-[#3b82f6] rounded-full shadow-[0_0_10px_rgba(59,130,246,0.4)]"></span> Contact Us
               </h4>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3 text-blue-100 text-sm">
-                  <MapPin className="w-5 h-5 text-[#3b82f6] shrink-0 mt-0.5" />
-                  <span>123 Dental Care Avenue, Medical District, City - 400001</span>
-                </li>
-                <li className="flex items-center gap-3 text-blue-100 text-sm">
-                  <Phone className="w-5 h-5 text-[#3b82f6] shrink-0" />
-                  <span>+91 98765 43210</span>
-                </li>
-                <li className="flex items-center gap-3 text-blue-100 text-sm">
-                  <Calendar className="w-5 h-5 text-[#3b82f6] shrink-0" />
-                  <span>Mon - Sun: 9:00 AM - 9:00 PM</span>
-                </li>
+              <ul className="space-y-6">
+                <motion.li whileHover={{ x: 5 }} className="flex items-start gap-4 text-gray-600 font-medium text-[15px] group">
+                  <div className="p-2.5 rounded-xl bg-white group-hover:bg-[#3b82f6] transition-colors border border-blue-100 shadow-sm mt-0.5">
+                    <MapPin className="w-5 h-5 text-[#3b82f6] group-hover:text-white transition-colors" />
+                  </div>
+                  <span className="pt-2 leading-relaxed">123 Dental Care Avenue, Medical District, City - 400001</span>
+                </motion.li>
+                <motion.li whileHover={{ x: 5 }} className="flex items-center gap-4 text-gray-600 font-medium text-[15px] group">
+                  <div className="p-2.5 rounded-xl bg-white group-hover:bg-[#3b82f6] transition-colors border border-blue-100 shadow-sm">
+                    <Phone className="w-5 h-5 text-[#3b82f6] group-hover:text-white transition-colors" />
+                  </div>
+                  <span className="pt-1">+91 98765 43210</span>
+                </motion.li>
+                <motion.li whileHover={{ x: 5 }} className="flex items-center gap-4 text-gray-600 font-medium text-[15px] group">
+                  <div className="p-2.5 rounded-xl bg-white group-hover:bg-[#3b82f6] transition-colors border border-blue-100 shadow-sm">
+                    <Calendar className="w-5 h-5 text-[#3b82f6] group-hover:text-white transition-colors" />
+                  </div>
+                  <span className="pt-1">Mon - Sun: 9:00 AM - 9:00 PM</span>
+                </motion.li>
               </ul>
             </motion.div>
           </div>
@@ -936,14 +953,14 @@ export default function App() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4"
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="pt-8 border-t border-blue-200/50 flex flex-col md:flex-row justify-between items-center gap-6"
           >
-            <p className="text-blue-200 text-sm">© 2026 rkclinic. All rights reserved.</p>
-            <div className="flex gap-4 text-sm text-blue-200">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <span>|</span>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <p className="text-gray-500 font-medium text-[15px]">© 2026 rkclinic. All rights reserved.</p>
+            <div className="flex gap-6 text-[15px] text-gray-500 font-medium">
+              <a href="#" className="hover:text-[#3b82f6] transition-colors">Privacy Policy</a>
+              <span className="opacity-30">|</span>
+              <a href="#" className="hover:text-[#3b82f6] transition-colors">Terms of Service</a>
             </div>
           </motion.div>
         </div>
