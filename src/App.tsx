@@ -1185,33 +1185,22 @@ export default function App() {
         </div>
       </footer>
       {/* Mobile Bottom Navigation */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-t border-blue-100 flex justify-around items-center p-1.5 z-50 shadow-[0_-8px_30px_rgba(30,58,138,0.08)]">
-        <a href="tel:9987342525" className="flex flex-col items-center p-2 text-[#1e3a8a] hover:text-[#3b82f6] flex-1 active:scale-95 transition-all">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#3b82f6] to-[#1e3a8a] flex items-center justify-center mb-1 shadow-[0_4px_12px_rgba(59,130,246,0.3)]">
-            <Phone className="w-5 h-5 text-white" />
-          </div>
-          <span className="text-[10px] font-bold text-center leading-tight">Call Now</span>
+      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 flex justify-around items-center py-2 z-50 shadow-[0_-2px_10px_rgba(0,0,0,0.04)]">
+        <a href="tel:9987342525" className="flex flex-col items-center py-1 flex-1 active:scale-95 transition-all">
+          <Phone className="w-5 h-5 text-[#1e3a8a] mb-1" />
+          <span className="text-[10px] font-semibold text-[#1e3a8a]">Call Now</span>
         </a>
-        <div className="w-px h-12 bg-gradient-to-b from-transparent via-blue-200 to-transparent"></div>
-        <a href="https://wa.me/919987342525" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center p-2 text-[#1e3a8a] hover:text-[#25D366] flex-1 active:scale-95 transition-all">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#25D366] to-[#128C7E] flex items-center justify-center mb-1 shadow-[0_4px_12px_rgba(37,211,102,0.3)]">
-            <MessageCircle className="w-5 h-5 text-white" />
-          </div>
-          <span className="text-[10px] font-bold text-center leading-tight">WhatsApp</span>
+        <a href="https://wa.me/919987342525" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center py-1 flex-1 active:scale-95 transition-all">
+          <svg className="w-5 h-5 mb-1 text-[#25D366] fill-current" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 0 5.385 0 12.032c0 2.138.56 4.22 1.624 6.06L.234 23.364l5.412-1.42A12.022 12.022 0 0 0 12.032 24c6.646 0 12.03-5.386 12.03-12.033S18.677 0 12.03 0zm5.955 17.15c-.247.697-1.442 1.34-2.028 1.408-.545.064-1.229.176-3.864-.913-3.176-1.31-5.263-4.57-5.422-4.78-.158-.21-1.298-1.722-1.298-3.284 0-1.562.812-2.33 1.101-2.637.288-.308.625-.385.834-.385.208 0 .416.002.604.01.203.008.472-.075.738.568.273.66.932 2.27 1.013 2.436.082.167.136.363.029.576-.107.213-.162.346-.324.536-.16.19-.336.417-.482.553-.16.15-.327.316-.145.629.182.313.806 1.332 1.733 2.158 1.066 1.942 1.842 2.146 2.156.204.313.325.268.448.196.123-.072.585-.683.743-.918.158-.234.316-.195.545-.11.23.086 1.442.68 1.69.816.248.128.388.204.444.315.056.111.056.643-.191 1.34z"/></svg>
+          <span className="text-[10px] font-semibold text-[#25D366]">WhatsApp</span>
         </a>
-        <div className="w-px h-12 bg-gradient-to-b from-transparent via-blue-200 to-transparent"></div>
-        <button onClick={() => setShowAddressPopup(true)} className="flex flex-col items-center p-2 text-[#1e3a8a] hover:text-[#3b82f6] flex-1 active:scale-95 transition-all">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#3b82f6] to-[#1e3a8a] flex items-center justify-center mb-1 shadow-[0_4px_12px_rgba(59,130,246,0.3)]">
-            <MapPin className="w-5 h-5 text-white" />
-          </div>
-          <span className="text-[10px] font-bold text-center leading-tight">Address</span>
+        <button onClick={() => setShowAddressPopup(true)} className="flex flex-col items-center py-1 flex-1 active:scale-95 transition-all">
+          <MapPin className="w-5 h-5 text-[#1e3a8a] mb-1" />
+          <span className="text-[10px] font-semibold text-[#1e3a8a]">Address</span>
         </button>
-        <div className="w-px h-12 bg-gradient-to-b from-transparent via-blue-200 to-transparent"></div>
-        <button onClick={() => setShowTimingPopup(true)} className="flex flex-col items-center p-2 text-[#1e3a8a] hover:text-[#3b82f6] flex-1 active:scale-95 transition-all">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#3b82f6] to-[#1e3a8a] flex items-center justify-center mb-1 shadow-[0_4px_12px_rgba(59,130,246,0.3)]">
-            <Clock className="w-5 h-5 text-white" />
-          </div>
-          <span className="text-[10px] font-bold text-center leading-tight">Timing</span>
+        <button onClick={() => setShowTimingPopup(true)} className="flex flex-col items-center py-1 flex-1 active:scale-95 transition-all">
+          <Clock className="w-5 h-5 text-[#1e3a8a] mb-1" />
+          <span className="text-[10px] font-semibold text-[#1e3a8a]">Timing</span>
         </button>
       </div>
 
@@ -1219,52 +1208,47 @@ export default function App() {
       <AnimatePresence>
         {showAddressPopup && (
           <motion.div
-            className="fixed inset-0 z-[100] flex items-end justify-center"
+            className="fixed inset-0 z-[100] flex items-center justify-center px-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setShowAddressPopup(false)}
           >
-            {/* Backdrop */}
-            <motion.div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
-            {/* Modal */}
+            <motion.div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]" />
             <motion.div
-              className="relative w-full max-w-md mx-4 mb-20 bg-white rounded-3xl shadow-[0_25px_60px_rgba(30,58,138,0.2)] overflow-hidden border border-blue-100"
-              initial={{ y: 300, opacity: 0, scale: 0.9 }}
+              className="relative w-full max-w-sm bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.12)] overflow-hidden"
+              initial={{ y: 40, opacity: 0, scale: 0.95 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
-              exit={{ y: 300, opacity: 0, scale: 0.9 }}
-              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              exit={{ y: 40, opacity: 0, scale: 0.95 }}
+              transition={{ type: 'spring', damping: 28, stiffness: 350 }}
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header */}
-              <div className="bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] p-5 flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <MapPin className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-white font-bold text-lg">Our Location</h3>
-                  <p className="text-blue-200 text-sm">Visit us at our clinic</p>
-                </div>
-                <button onClick={() => setShowAddressPopup(false)} className="ml-auto w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
-                  <X className="w-4 h-4 text-white" />
+              <div className="flex items-center justify-between px-6 pt-5 pb-3">
+                <h3 className="text-lg font-bold text-[#1e3a8a]">Our Location</h3>
+                <button onClick={() => setShowAddressPopup(false)} className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors">
+                  <X className="w-3.5 h-3.5 text-gray-500" />
                 </button>
               </div>
+              {/* Divider */}
+              <div className="mx-6 h-px bg-gray-100"></div>
               {/* Content */}
-              <div className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <MapPin className="w-5 h-5 text-[#3b82f6]" />
-                  </div>
+              <div className="px-6 py-5">
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-4 h-4 text-[#3b82f6] mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-bold text-[#1e3a8a] text-[15px] leading-relaxed">R.K. Dental Clinic</p>
-                    <p className="text-gray-600 text-sm leading-relaxed mt-1">P.L. Lokhande Marg, Gulshan Baug,<br/>Opp. Fish Market, Chembur,<br/>Mumbai - 400089</p>
+                    <p className="font-semibold text-[#1e3a8a] text-sm">R.K. Dental Clinic</p>
+                    <p className="text-gray-500 text-[13px] leading-relaxed mt-1">P.L. Lokhande Marg, Gulshan Baug, Opp. Fish Market, Chembur, Mumbai - 400089</p>
                   </div>
                 </div>
+              </div>
+              {/* Action */}
+              <div className="px-6 pb-5">
                 <a
                   href="https://maps.google.com/?q=P.L.+Lokhande+Marg,+Gulshan+Baug,+Chembur,+Mumbai+400089"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-5 w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] text-white py-3.5 rounded-2xl font-bold text-sm hover:shadow-lg transition-all active:scale-[0.98]"
+                  className="w-full flex items-center justify-center gap-2 bg-[#1e3a8a] text-white py-3 rounded-xl font-semibold text-sm hover:bg-[#1e3a8a]/90 transition-colors active:scale-[0.98]"
                 >
                   <MapPin className="w-4 h-4" /> Open in Google Maps
                 </a>
@@ -1278,59 +1262,52 @@ export default function App() {
       <AnimatePresence>
         {showTimingPopup && (
           <motion.div
-            className="fixed inset-0 z-[100] flex items-end justify-center"
+            className="fixed inset-0 z-[100] flex items-center justify-center px-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setShowTimingPopup(false)}
           >
-            {/* Backdrop */}
-            <motion.div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
-            {/* Modal */}
+            <motion.div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]" />
             <motion.div
-              className="relative w-full max-w-md mx-4 mb-20 bg-white rounded-3xl shadow-[0_25px_60px_rgba(30,58,138,0.2)] overflow-hidden border border-blue-100"
-              initial={{ y: 300, opacity: 0, scale: 0.9 }}
+              className="relative w-full max-w-sm bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.12)] overflow-hidden"
+              initial={{ y: 40, opacity: 0, scale: 0.95 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
-              exit={{ y: 300, opacity: 0, scale: 0.9 }}
-              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              exit={{ y: 40, opacity: 0, scale: 0.95 }}
+              transition={{ type: 'spring', damping: 28, stiffness: 350 }}
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header */}
-              <div className="bg-gradient-to-r from-[#d97706] to-[#f59e0b] p-5 flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                  <Clock className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-white font-bold text-lg">Clinic Timings</h3>
-                  <p className="text-amber-100 text-sm">Open 7 days a week</p>
-                </div>
-                <button onClick={() => setShowTimingPopup(false)} className="ml-auto w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
-                  <X className="w-4 h-4 text-white" />
+              <div className="flex items-center justify-between px-6 pt-5 pb-3">
+                <h3 className="text-lg font-bold text-[#1e3a8a]">Clinic Timings</h3>
+                <button onClick={() => setShowTimingPopup(false)} className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors">
+                  <X className="w-3.5 h-3.5 text-gray-500" />
                 </button>
               </div>
+              {/* Divider */}
+              <div className="mx-6 h-px bg-gray-100"></div>
               {/* Content */}
-              <div className="p-6 space-y-4">
-                <div className="flex items-center gap-4 p-4 bg-blue-50/60 rounded-2xl border border-blue-100">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#3b82f6] to-[#1e3a8a] flex items-center justify-center flex-shrink-0">
-                    <span className="text-white text-lg">🌅</span>
+              <div className="px-6 py-5 space-y-3">
+                <div className="flex items-center justify-between py-3 px-4 bg-[#f0f9ff] rounded-xl">
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-4 h-4 text-[#3b82f6]" />
+                    <span className="text-sm font-medium text-[#1e3a8a]">Morning</span>
                   </div>
-                  <div>
-                    <p className="font-bold text-[#1e3a8a] text-sm">Morning Session</p>
-                    <p className="text-[#3b82f6] font-extrabold text-lg">10:00 AM – 2:00 PM</p>
-                  </div>
+                  <span className="text-sm font-bold text-[#1e3a8a]">10:00 AM – 2:00 PM</span>
                 </div>
-                <div className="flex items-center gap-4 p-4 bg-amber-50/60 rounded-2xl border border-amber-100">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#f59e0b] to-[#d97706] flex items-center justify-center flex-shrink-0">
-                    <span className="text-white text-lg">🌙</span>
+                <div className="flex items-center justify-between py-3 px-4 bg-[#f0f9ff] rounded-xl">
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-4 h-4 text-[#3b82f6]" />
+                    <span className="text-sm font-medium text-[#1e3a8a]">Evening</span>
                   </div>
-                  <div>
-                    <p className="font-bold text-[#92400e] text-sm">Evening Session</p>
-                    <p className="text-[#d97706] font-extrabold text-lg">5:00 PM – 10:00 PM</p>
-                  </div>
+                  <span className="text-sm font-bold text-[#1e3a8a]">5:00 PM – 10:00 PM</span>
                 </div>
+              </div>
+              {/* Action */}
+              <div className="px-6 pb-5">
                 <a
                   href="tel:9987342525"
-                  className="mt-2 w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] text-white py-3.5 rounded-2xl font-bold text-sm hover:shadow-lg transition-all active:scale-[0.98]"
+                  className="w-full flex items-center justify-center gap-2 bg-[#1e3a8a] text-white py-3 rounded-xl font-semibold text-sm hover:bg-[#1e3a8a]/90 transition-colors active:scale-[0.98]"
                 >
                   <Phone className="w-4 h-4" /> Book an Appointment
                 </a>
