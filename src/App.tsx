@@ -76,7 +76,7 @@ const SkeletonLoader = () => (
     </div>
 
     {/* Hero Skeleton */}
-    <div className="max-w-[1400px] mx-auto px-4 pt-40 pb-20 grid lg:grid-cols-2 gap-12">
+    <div className="max-w-[1400px] mx-auto px-6 pt-40 pb-20 grid lg:grid-cols-2 gap-12">
       <div className="space-y-6 pt-10">
         <div className="w-48 h-8 bg-blue-100 rounded-full"></div>
         <div className="w-3/4 h-16 bg-gray-200 rounded-2xl"></div>
@@ -108,7 +108,7 @@ const SkeletonLoader = () => (
     </div>
 
     {/* Treatments Skeleton */}
-    <div className="max-w-[1400px] mx-auto px-4 py-24">
+    <div className="max-w-[1400px] mx-auto px-6 py-24">
       <div className="flex flex-col items-center mb-16">
         <div className="w-32 h-6 bg-blue-100 rounded-full mb-4"></div>
         <div className="w-64 h-10 bg-gray-200 rounded-2xl"></div>
@@ -713,7 +713,7 @@ export default function App() {
         <div className="absolute -right-20 top-20 w-72 h-72 bg-blue-50 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
         <div className="absolute -left-20 bottom-20 w-72 h-72 bg-blue-50 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
         
-        <div className="max-w-[1200px] mx-auto px-4 relative z-10">
+        <div className="max-w-[1200px] mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
             {/* Image Column */}
             <motion.div 
@@ -872,7 +872,7 @@ export default function App() {
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent"></div>
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent"></div>
 
-        <div className="max-w-[1200px] mx-auto px-4 relative z-10">
+        <div className="max-w-[1200px] mx-auto px-6 relative z-10">
           <div className="bg-gradient-to-br from-[#f0f9ff] to-[#e8f4fd] rounded-3xl p-8 md:p-14 relative overflow-hidden border border-blue-100/80">
             {/* Decorative corner accent */}
             <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-[#3b82f6]/8 to-transparent rounded-bl-[100px]"></div>
