@@ -243,35 +243,38 @@ export default function App() {
     <div className="min-h-screen bg-[#f8fafc] text-[#333] font-sans pb-20 md:pb-0">
       {/* Header */}
       <motion.header 
-        className="fixed top-0 left-0 right-0 z-50 bg-[#e0f2fe]/95 backdrop-blur-md shadow-sm border-b border-blue-200/50 pointer-events-auto"
+        className="fixed top-0 left-0 right-0 z-50 bg-[#0b1120]/85 backdrop-blur-xl shadow-lg border-b border-white/10 pointer-events-auto"
         animate={{ y: isMobile ? (isNavVisible ? 0 : -100) : 0 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
+        {/* Animated Gradient Border Bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-cyan-400 via-[#3b82f6] to-purple-500 opacity-80"></div>
+        
         <div className="w-full">
           <div 
             ref={navRef}
-            className="max-w-[1400px] mx-auto flex justify-between items-center w-full px-4 md:px-6 py-3 md:py-4"
+            className="max-w-[1400px] mx-auto flex justify-between items-center w-full px-4 md:px-6 py-2 md:py-3"
           >
             {/* Logo */}
-            <div className="flex items-center cursor-pointer hover:scale-105 transition-transform z-10 h-16 md:h-20 -ml-2">
-              <img src="/logo.png" alt="RK Logo" className="h-full w-auto object-contain drop-shadow-md" />
+            <div className="flex items-center cursor-pointer hover:scale-105 transition-transform z-10 h-14 md:h-16 bg-white/10 rounded-lg p-2 backdrop-blur-md border border-white/20">
+              <img src="/logo.png" alt="RK Logo" className="h-full w-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]" />
             </div>
             
             {/* Desktop Nav & Buttons */}
             <div className="hidden lg:flex items-center gap-6 z-10">
-              <nav className="flex items-center gap-2 text-[16px] font-bold text-[#1e3a8a]">
-                <a href="#" className="relative px-4 py-2 rounded-full hover:bg-white/50 hover:text-[#3b82f6] transition-all duration-300 inline-block after:content-[''] after:absolute after:bottom-1.5 after:left-4 after:right-4 after:h-[2px] after:bg-[#3b82f6] after:origin-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-out">Home</a>
-                <a href="#" className="relative px-4 py-2 rounded-full hover:bg-white/50 hover:text-[#3b82f6] transition-all duration-300 inline-block after:content-[''] after:absolute after:bottom-1.5 after:left-4 after:right-4 after:h-[2px] after:bg-[#3b82f6] after:origin-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-out">Treatment</a>
-                <a href="#" className="relative px-4 py-2 rounded-full hover:bg-white/50 hover:text-[#3b82f6] transition-all duration-300 inline-block after:content-[''] after:absolute after:bottom-1.5 after:left-4 after:right-4 after:h-[2px] after:bg-[#3b82f6] after:origin-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-out">About Us</a>
-                <a href="#" className="relative px-4 py-2 rounded-full hover:bg-white/50 hover:text-[#3b82f6] transition-all duration-300 inline-block after:content-[''] after:absolute after:bottom-1.5 after:left-4 after:right-4 after:h-[2px] after:bg-[#3b82f6] after:origin-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-out">Contact Us</a>
+              <nav className="flex items-center gap-2 text-[15px] font-medium text-blue-100/90">
+                <a href="#" className="relative px-5 py-2.5 rounded-full hover:bg-white/5 hover:text-cyan-400 transition-all duration-300 inline-block after:content-[''] after:absolute after:bottom-1 after:left-5 after:right-5 after:h-[2px] after:bg-cyan-400 after:origin-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-out">Home</a>
+                <a href="#" className="relative px-5 py-2.5 rounded-full hover:bg-white/5 hover:text-cyan-400 transition-all duration-300 inline-block after:content-[''] after:absolute after:bottom-1 after:left-5 after:right-5 after:h-[2px] after:bg-cyan-400 after:origin-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-out">Treatment</a>
+                <a href="#" className="relative px-5 py-2.5 rounded-full hover:bg-white/5 hover:text-cyan-400 transition-all duration-300 inline-block after:content-[''] after:absolute after:bottom-1 after:left-5 after:right-5 after:h-[2px] after:bg-cyan-400 after:origin-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-out">About Us</a>
+                <a href="#" className="relative px-5 py-2.5 rounded-full hover:bg-white/5 hover:text-cyan-400 transition-all duration-300 inline-block after:content-[''] after:absolute after:bottom-1 after:left-5 after:right-5 after:h-[2px] after:bg-cyan-400 after:origin-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:ease-out">Contact Us</a>
               </nav>
-              <button className="bg-[#3b82f6] text-white px-8 py-3 font-bold rounded-full flex items-center gap-2 hover:bg-[#2563eb] hover:scale-105 transition-all duration-300 shadow-[0_4px_14px_rgba(59,130,246,0.4)]">
+              <button className="bg-gradient-to-r from-[#3b82f6] to-cyan-500 text-white px-8 py-3 font-bold rounded-full flex items-center gap-2 hover:scale-105 transition-all duration-300 shadow-[0_4px_20px_rgba(34,211,238,0.4)] border border-white/10">
                 <Phone size={18} /> Call Now
               </button>
             </div>
 
             {/* Mobile Menu Toggle */}
-            <button className="lg:hidden p-2 text-[#1e3a8a] bg-white/50 rounded-full hover:scale-105 transition-transform z-10 pointer-events-auto" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <button className="lg:hidden p-2 text-white bg-white/10 rounded-full hover:bg-white/20 hover:scale-105 transition-all border border-white/10 z-10 pointer-events-auto" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -284,13 +287,13 @@ export default function App() {
                 animate={{ opacity: 1, y: 0, scaleY: 1 }}
                 exit={{ opacity: 0, y: -20, scaleY: 0.95 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
-                className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-xl shadow-2xl border-b border-gray-200/50 p-6 pt-4 flex flex-col gap-2 font-bold text-gray-800 pointer-events-auto origin-top z-40"
+                className="lg:hidden absolute top-full left-0 right-0 bg-[#0b1120]/95 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)] border-b border-white/10 p-6 pt-4 flex flex-col gap-2 font-medium text-blue-100/90 pointer-events-auto origin-top z-40"
               >
-                <a href="#" onClick={() => setIsMenuOpen(false)} className="p-3 text-lg hover:text-[#3b82f6] hover:bg-blue-50/50 rounded-xl transition-all border-b border-gray-50">Home</a>
-                <a href="#" onClick={() => setIsMenuOpen(false)} className="p-3 text-lg hover:text-[#3b82f6] hover:bg-blue-50/50 rounded-xl transition-all border-b border-gray-50">Treatment</a>
-                <a href="#" onClick={() => setIsMenuOpen(false)} className="p-3 text-lg hover:text-[#3b82f6] hover:bg-blue-50/50 rounded-xl transition-all border-b border-gray-50">About Us</a>
-                <a href="#" onClick={() => setIsMenuOpen(false)} className="p-3 text-lg hover:text-[#3b82f6] hover:bg-blue-50/50 rounded-xl transition-all border-b border-gray-50">Contact Us</a>
-                <button className="bg-[#3b82f6]/15 backdrop-blur-md border border-[#3b82f6]/30 text-[#1e3a8a] px-6 py-4 text-lg font-bold rounded-full flex items-center justify-center gap-2 hover:bg-[#3b82f6]/25 transition-all mt-4 shadow-[0_8px_32px_rgba(59,130,246,0.1)]">
+                <a href="#" onClick={() => setIsMenuOpen(false)} className="p-3 text-lg hover:text-cyan-400 hover:bg-white/5 rounded-xl transition-all border-b border-white/5">Home</a>
+                <a href="#" onClick={() => setIsMenuOpen(false)} className="p-3 text-lg hover:text-cyan-400 hover:bg-white/5 rounded-xl transition-all border-b border-white/5">Treatment</a>
+                <a href="#" onClick={() => setIsMenuOpen(false)} className="p-3 text-lg hover:text-cyan-400 hover:bg-white/5 rounded-xl transition-all border-b border-white/5">About Us</a>
+                <a href="#" onClick={() => setIsMenuOpen(false)} className="p-3 text-lg hover:text-cyan-400 hover:bg-white/5 rounded-xl transition-all border-b border-white/5">Contact Us</a>
+                <button className="bg-gradient-to-r from-[#3b82f6] to-cyan-500 text-white px-6 py-4 text-lg font-bold rounded-full flex items-center justify-center gap-2 hover:scale-[1.02] transition-all mt-4 shadow-[0_8px_32px_rgba(34,211,238,0.2)] border border-white/10">
                   <Phone size={20} /> Call Now
                 </button>
               </motion.div>
