@@ -446,7 +446,7 @@ export default function App() {
                   <span className="text-5xl font-serif italic text-[#1e3a8a] leading-none">Rx</span>
                 </div>
                 <div className="text-right">
-                  <h2 className="text-xl font-bold text-[#1e3a8a] uppercase tracking-widest">R.K. Dental Clinic</h2>
+                  <img src="/desktop-logo.png" alt="R.K. Dental Clinic" className="h-6 ml-auto object-contain mb-1" />
                   <p className="text-[10px] text-gray-500 font-medium tracking-wider mt-1">P.L. Lokhande Marg,Gulshan Baug,Opp. Fish Market,Chembur, Mumbai - 400089</p>
                   <p className="text-[10px] text-gray-500 font-medium tracking-wider">+91 9987342525</p>
                 </div>
