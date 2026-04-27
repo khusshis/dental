@@ -229,8 +229,8 @@ export default function App() {
     { icon: <img src="/Braces-2.gif" alt="Dental Braces" className="w-12 h-12 object-contain" />, name: "Dental Braces &\nAligners" },
     { icon: <img src="/Dental-Implants.gif" alt="Dental Implants" className="w-12 h-12 object-contain" />, name: "Dental Implants /\nTeeth Implants" },
     { icon: <img src="/Dentures.gif" alt="Dentures" className="w-12 h-12 object-contain" />, name: "Dentures" },
-    { icon: <Baby className="w-12 h-12 text-[#3b82f6] stroke-[1.5]" />, name: "Kids Dentistry" },
-    { icon: <Activity className="w-12 h-12 text-[#3b82f6] stroke-[1.5]" />, name: "Mouth Ulcers" },
+    { icon: <img src="/Kids-Dentistery.gif" alt="Kids Dentistry" className="w-12 h-12 object-contain" />, name: "Kids Dentistry" },
+    { icon: <img src="/Mouth-ulcers-1-2.gif" alt="Mouth Ulcers" className="w-12 h-12 object-contain" />, name: "Mouth Ulcers" },
     { icon: <img src="/Gum-Treatment.gif" alt="Gum Treatment" className="w-12 h-12 object-contain" />, name: "Advanced Gum\nTreatment" },
   ];
 
@@ -661,14 +661,23 @@ export default function App() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.3 }}
-                    className="bg-white/60 backdrop-blur-md p-6 rounded-2xl shadow-[0_8px_32px_rgba(30,58,138,0.05)] border border-white/60 flex flex-col items-center text-center group cursor-pointer hover:bg-white/80 hover:shadow-[0_8px_32px_rgba(30,58,138,0.1)] hover:-translate-y-1"
+                    className="relative bg-white p-6 rounded-[2rem] shadow-[0_4px_20px_rgba(30,58,138,0.03)] border border-blue-50 flex flex-col items-center text-center group cursor-pointer hover:shadow-[0_15px_40px_rgba(59,130,246,0.12)] hover:-translate-y-2 transition-all duration-500 overflow-hidden"
                   >
-                    <div className="mb-5 p-4 bg-white/80 rounded-2xl group-hover:bg-blue-50 group-hover:scale-110 transition-all duration-300 text-[#3b82f6] shadow-sm">
+                    {/* Hover gradient background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                    
+                    {/* Icon container */}
+                    <div className="relative mb-6 p-4 bg-white rounded-2xl shadow-[0_4px_15px_rgba(59,130,246,0.08)] group-hover:shadow-[0_8px_25px_rgba(59,130,246,0.2)] group-hover:scale-110 transition-all duration-500 z-10 border border-blue-50/50 flex items-center justify-center">
                       {treatment.icon}
                     </div>
-                    <h3 className="text-[15px] font-bold text-gray-800 whitespace-pre-line leading-snug group-hover:text-[#3b82f6] transition-colors">
+                    
+                    {/* Text */}
+                    <h3 className="text-[15px] font-bold text-[#1e3a8a] whitespace-pre-line leading-snug group-hover:text-[#3b82f6] transition-colors z-10">
                       {treatment.name}
                     </h3>
+                    
+                    {/* Animated bottom border */}
+                    <div className="absolute bottom-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
                   </motion.div>
                 );
               })}
