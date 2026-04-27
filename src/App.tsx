@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { 
   Phone, Calendar, MapPin, Shield, Users, Award, Smile, 
   Menu, X, ChevronDown, Activity, Stethoscope, Syringe, 
-  Sparkles, Baby, Heart, Star, ArrowUp
+  Sparkles, Baby, Heart, Star, ArrowUp, Clock, MessageCircle
 } from 'lucide-react';
 
 const BeforeAfterSlider = ({ beforeImage, afterImage, fakeBefore = false }: { beforeImage: string, afterImage: string, fakeBefore?: boolean }) => {
@@ -145,6 +145,8 @@ export default function App() {
   const [ctaFormOpen, setCtaFormOpen] = useState(false);
   const [ctaForm, setCtaForm] = useState({ name: '', phone: '', service: '', date: '' });
   const [ctaSubmitted, setCtaSubmitted] = useState(false);
+  const [showAddressPopup, setShowAddressPopup] = useState(false);
+  const [showTimingPopup, setShowTimingPopup] = useState(false);
   const navRef = useRef(null);
 
   useEffect(() => {
@@ -1186,27 +1188,160 @@ export default function App() {
         </div>
       </footer>
       {/* Mobile Bottom Navigation */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-[#f0f9ff] border-t border-gray-200 flex justify-around items-center p-1.5 z-50 shadow-[0_-4px_15px_rgba(0,0,0,0.05)]">
-        <button className="flex flex-col items-center p-2 text-gray-700 hover:text-[#3b82f6] flex-1">
-          <Calendar className="w-6 h-6 mb-1" />
-          <span className="text-[11px] font-semibold text-center leading-tight">Book<br/>Appointment</span>
+      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-t border-blue-100 flex justify-around items-center p-1.5 z-50 shadow-[0_-8px_30px_rgba(30,58,138,0.08)]">
+        <a href="tel:9987342525" className="flex flex-col items-center p-2 text-[#1e3a8a] hover:text-[#3b82f6] flex-1 active:scale-95 transition-all">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#3b82f6] to-[#1e3a8a] flex items-center justify-center mb-1 shadow-[0_4px_12px_rgba(59,130,246,0.3)]">
+            <Phone className="w-5 h-5 text-white" />
+          </div>
+          <span className="text-[10px] font-bold text-center leading-tight">Call Now</span>
+        </a>
+        <div className="w-px h-12 bg-gradient-to-b from-transparent via-blue-200 to-transparent"></div>
+        <a href="https://wa.me/919987342525" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center p-2 text-[#1e3a8a] hover:text-[#25D366] flex-1 active:scale-95 transition-all">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#25D366] to-[#128C7E] flex items-center justify-center mb-1 shadow-[0_4px_12px_rgba(37,211,102,0.3)]">
+            <MessageCircle className="w-5 h-5 text-white" />
+          </div>
+          <span className="text-[10px] font-bold text-center leading-tight">WhatsApp</span>
+        </a>
+        <div className="w-px h-12 bg-gradient-to-b from-transparent via-blue-200 to-transparent"></div>
+        <button onClick={() => setShowAddressPopup(true)} className="flex flex-col items-center p-2 text-[#1e3a8a] hover:text-[#3b82f6] flex-1 active:scale-95 transition-all">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#6366f1] to-[#4f46e5] flex items-center justify-center mb-1 shadow-[0_4px_12px_rgba(99,102,241,0.3)]">
+            <MapPin className="w-5 h-5 text-white" />
+          </div>
+          <span className="text-[10px] font-bold text-center leading-tight">Address</span>
         </button>
-        <div className="w-px h-10 bg-gray-300"></div>
-        <button className="flex flex-col items-center p-2 text-gray-700 hover:text-[#3b82f6] flex-1">
-          <MapPin className="w-6 h-6 mb-1" />
-          <span className="text-[11px] font-semibold text-center leading-tight">Find<br/>Clinics</span>
-        </button>
-        <div className="w-px h-10 bg-gray-300"></div>
-        <button className="flex flex-col items-center p-2 text-[#3b82f6] flex-1">
-          <Shield className="w-6 h-6 mb-1" />
-          <span className="text-[11px] font-semibold text-center leading-tight">Dental<br/>Health Plan</span>
-        </button>
-        <div className="w-px h-10 bg-gray-300"></div>
-        <button className="flex flex-col items-center p-2 text-gray-700 hover:text-[#3b82f6] flex-1">
-          <Phone className="w-6 h-6 mb-1" />
-          <span className="text-[11px] font-semibold text-center leading-tight">Instant<br/>Callback</span>
+        <div className="w-px h-12 bg-gradient-to-b from-transparent via-blue-200 to-transparent"></div>
+        <button onClick={() => setShowTimingPopup(true)} className="flex flex-col items-center p-2 text-[#1e3a8a] hover:text-[#3b82f6] flex-1 active:scale-95 transition-all">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#f59e0b] to-[#d97706] flex items-center justify-center mb-1 shadow-[0_4px_12px_rgba(245,158,11,0.3)]">
+            <Clock className="w-5 h-5 text-white" />
+          </div>
+          <span className="text-[10px] font-bold text-center leading-tight">Timing</span>
         </button>
       </div>
+
+      {/* Address Popup Modal */}
+      <AnimatePresence>
+        {showAddressPopup && (
+          <motion.div
+            className="fixed inset-0 z-[100] flex items-end justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setShowAddressPopup(false)}
+          >
+            {/* Backdrop */}
+            <motion.div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+            {/* Modal */}
+            <motion.div
+              className="relative w-full max-w-md mx-4 mb-20 bg-white rounded-3xl shadow-[0_25px_60px_rgba(30,58,138,0.2)] overflow-hidden border border-blue-100"
+              initial={{ y: 300, opacity: 0, scale: 0.9 }}
+              animate={{ y: 0, opacity: 1, scale: 1 }}
+              exit={{ y: 300, opacity: 0, scale: 0.9 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header */}
+              <div className="bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] p-5 flex items-center gap-3">
+                <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <MapPin className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">Our Location</h3>
+                  <p className="text-blue-200 text-sm">Visit us at our clinic</p>
+                </div>
+                <button onClick={() => setShowAddressPopup(false)} className="ml-auto w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                  <X className="w-4 h-4 text-white" />
+                </button>
+              </div>
+              {/* Content */}
+              <div className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <MapPin className="w-5 h-5 text-[#3b82f6]" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-[#1e3a8a] text-[15px] leading-relaxed">R.K. Dental Clinic</p>
+                    <p className="text-gray-600 text-sm leading-relaxed mt-1">P.L. Lokhande Marg, Gulshan Baug,<br/>Opp. Fish Market, Chembur,<br/>Mumbai - 400089</p>
+                  </div>
+                </div>
+                <a
+                  href="https://maps.google.com/?q=P.L.+Lokhande+Marg,+Gulshan+Baug,+Chembur,+Mumbai+400089"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] text-white py-3.5 rounded-2xl font-bold text-sm hover:shadow-lg transition-all active:scale-[0.98]"
+                >
+                  <MapPin className="w-4 h-4" /> Open in Google Maps
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Timing Popup Modal */}
+      <AnimatePresence>
+        {showTimingPopup && (
+          <motion.div
+            className="fixed inset-0 z-[100] flex items-end justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setShowTimingPopup(false)}
+          >
+            {/* Backdrop */}
+            <motion.div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+            {/* Modal */}
+            <motion.div
+              className="relative w-full max-w-md mx-4 mb-20 bg-white rounded-3xl shadow-[0_25px_60px_rgba(30,58,138,0.2)] overflow-hidden border border-blue-100"
+              initial={{ y: 300, opacity: 0, scale: 0.9 }}
+              animate={{ y: 0, opacity: 1, scale: 1 }}
+              exit={{ y: 300, opacity: 0, scale: 0.9 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header */}
+              <div className="bg-gradient-to-r from-[#d97706] to-[#f59e0b] p-5 flex items-center gap-3">
+                <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <Clock className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">Clinic Timings</h3>
+                  <p className="text-amber-100 text-sm">Open 7 days a week</p>
+                </div>
+                <button onClick={() => setShowTimingPopup(false)} className="ml-auto w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                  <X className="w-4 h-4 text-white" />
+                </button>
+              </div>
+              {/* Content */}
+              <div className="p-6 space-y-4">
+                <div className="flex items-center gap-4 p-4 bg-blue-50/60 rounded-2xl border border-blue-100">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#3b82f6] to-[#1e3a8a] flex items-center justify-center flex-shrink-0">
+                    <span className="text-white text-lg">🌅</span>
+                  </div>
+                  <div>
+                    <p className="font-bold text-[#1e3a8a] text-sm">Morning Session</p>
+                    <p className="text-[#3b82f6] font-extrabold text-lg">10:00 AM – 2:00 PM</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 p-4 bg-amber-50/60 rounded-2xl border border-amber-100">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#f59e0b] to-[#d97706] flex items-center justify-center flex-shrink-0">
+                    <span className="text-white text-lg">🌙</span>
+                  </div>
+                  <div>
+                    <p className="font-bold text-[#92400e] text-sm">Evening Session</p>
+                    <p className="text-[#d97706] font-extrabold text-lg">5:00 PM – 10:00 PM</p>
+                  </div>
+                </div>
+                <a
+                  href="tel:9987342525"
+                  className="mt-2 w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] text-white py-3.5 rounded-2xl font-bold text-sm hover:shadow-lg transition-all active:scale-[0.98]"
+                >
+                  <Phone className="w-4 h-4" /> Book an Appointment
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       {/* Floating Action Buttons */}
       <div className="fixed bottom-24 md:bottom-8 right-6 z-40 flex flex-col items-center gap-4">
         {/* WhatsApp Button */}
