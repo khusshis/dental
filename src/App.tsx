@@ -370,7 +370,7 @@ export default function App() {
               </div>
             </div>
           </div>
-          <div className="md:w-1/2 mt-10 md:mt-0 relative w-full flex justify-end perspective-1000">
+          <div id="appointment-form" className="md:w-1/2 mt-10 md:mt-0 relative w-full flex justify-end perspective-1000">
             <motion.div 
               initial={{ rotate: -2, y: -20, opacity: 0 }}
               animate={{ rotate: [-0.5, 0.5, -0.5], y: 0, opacity: 1 }}
@@ -845,6 +845,57 @@ export default function App() {
           </div>
         </div>
       </section>
+      {/* CTA Section */}
+      <section className="relative py-20 overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#3b82f6]">
+          {/* Animated floating orbs */}
+          <motion.div 
+            animate={{ scale: [1, 1.3, 1], x: [0, 60, 0], y: [0, -40, 0] }}
+            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-white/5 blur-[80px]"
+          ></motion.div>
+          <motion.div 
+            animate={{ scale: [1, 1.2, 1], x: [0, -50, 0], y: [0, 30, 0] }}
+            transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute bottom-0 left-0 w-[350px] h-[350px] rounded-full bg-white/5 blur-[80px]"
+          ></motion.div>
+          {/* Grid pattern overlay */}
+          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
+        </div>
+
+        <div className="max-w-[900px] mx-auto px-4 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 text-sm font-semibold mb-6">
+              <Sparkles className="w-4 h-4" />
+              <span>Premium Dental Care</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5 tracking-tight">
+              Expert Dental Advice —<br className="hidden md:block" /> <span className="text-blue-200">Book Now!</span>
+            </h2>
+            <p className="text-blue-100/80 text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed">
+              Don't wait for dental issues to escalate. Get expert consultation and personalized treatment plans today.
+            </p>
+            <motion.a
+              href="#appointment-form"
+              whileHover={{ scale: 1.05, y: -3 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-3 bg-white text-[#1e3a8a] px-10 py-4.5 font-bold text-lg rounded-full shadow-[0_15px_40px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-300 group"
+            >
+              <span>Get Started</span>
+              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#3b82f6]/15 group-hover:bg-[#3b82f6] transition-colors duration-300">
+                <ArrowUp className="w-4 h-4 text-[#3b82f6] group-hover:text-white transition-colors duration-300 rotate-[45deg]" />
+              </span>
+            </motion.a>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-[#f0f9ff] text-[#1e3a8a] pt-20 pb-28 md:pb-12 relative overflow-hidden">
         {/* Animated Gradient Border Top */}
