@@ -260,7 +260,8 @@ export default function App() {
           >
             {/* Logo */}
             <div className="flex items-center cursor-pointer hover:scale-105 transition-transform z-10 h-14 md:h-16">
-              <img src="/logo.png" alt="RK Logo" className="h-full w-auto object-contain drop-shadow-sm" />
+              <img src="/logo.png" alt="RK Logo" className="h-full w-auto object-contain drop-shadow-sm lg:hidden" />
+              <img src="/desktop-logo.png" alt="RK Dental Clinic" className="hidden lg:block h-full w-auto object-contain drop-shadow-sm py-2" />
             </div>
             
             {/* Desktop Nav & Buttons */}
