@@ -988,22 +988,42 @@ export default function App() {
           <span className="text-[11px] font-semibold text-center leading-tight">Instant<br/>Callback</span>
         </button>
       </div>
+      {/* Floating Action Buttons */}
+      <div className="fixed bottom-24 md:bottom-8 right-6 z-40 flex flex-col items-center gap-4">
+        {/* WhatsApp Button */}
+        <motion.a
+          href="https://wa.me/918433856648"
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, y: 20, scale: 0.8 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          whileHover={{ scale: 1.1 }}
+          className="bg-[#25D366] text-white p-3.5 rounded-full shadow-[0_8px_32px_rgba(37,211,102,0.4)] transition-all duration-300 flex items-center justify-center relative group"
+          aria-label="Chat on WhatsApp"
+        >
+          {/* Ping animation behind button */}
+          <span className="absolute w-full h-full rounded-full bg-[#25D366] opacity-50 animate-ping"></span>
+          <svg className="w-7 h-7 fill-current relative z-10" viewBox="0 0 24 24">
+            <path d="M12.031 0C5.385 0 0 5.385 0 12.032c0 2.138.56 4.22 1.624 6.06L.234 23.364l5.412-1.42A12.022 12.022 0 0 0 12.032 24c6.646 0 12.03-5.386 12.03-12.033S18.677 0 12.03 0zm5.955 17.15c-.247.697-1.442 1.34-2.028 1.408-.545.064-1.229.176-3.864-.913-3.176-1.31-5.263-4.57-5.422-4.78-.158-.21-1.298-1.722-1.298-3.284 0-1.562.812-2.33 1.101-2.637.288-.308.625-.385.834-.385.208 0 .416.002.604.01.203.008.472-.075.738.568.273.66.932 2.27 1.013 2.436.082.167.136.363.029.576-.107.213-.162.346-.324.536-.16.19-.336.417-.482.553-.16.15-.327.316-.145.629.182.313.806 1.332 1.733 2.158 1.066 1.942 1.842 2.146 2.156.204.313.325.268.448.196.123-.072.585-.683.743-.918.158-.234.316-.195.545-.11.23.086 1.442.68 1.69.816.248.128.388.204.444.315.056.111.056.643-.191 1.34z"/>
+          </svg>
+        </motion.a>
 
-      {/* Back to Top Button */}
-      <AnimatePresence>
-        {showBackToTop && (
-          <motion.button
-            initial={{ opacity: 0, y: 20, scale: 0.8 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.8 }}
-            onClick={scrollToTop}
-            className="fixed bottom-24 md:bottom-8 right-6 z-40 bg-[#3b82f6] text-white p-3 rounded-full shadow-[0_8px_32px_rgba(59,130,246,0.3)] hover:bg-[#2563eb] hover:scale-110 transition-all duration-300 flex items-center justify-center"
-            aria-label="Back to top"
-          >
-            <ArrowUp size={24} />
-          </motion.button>
-        )}
-      </AnimatePresence>
+        {/* Back to Top Button */}
+        <AnimatePresence>
+          {showBackToTop && (
+            <motion.button
+              initial={{ opacity: 0, y: 20, scale: 0.8 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.8 }}
+              onClick={scrollToTop}
+              className="bg-[#3b82f6] text-white p-3 rounded-full shadow-[0_8px_32px_rgba(59,130,246,0.3)] hover:bg-[#2563eb] hover:scale-110 transition-all duration-300 flex items-center justify-center"
+              aria-label="Back to top"
+            >
+              <ArrowUp size={24} />
+            </motion.button>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 }
