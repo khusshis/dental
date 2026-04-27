@@ -320,7 +320,7 @@ export default function App() {
               </span>
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 leading-[1.1] mb-6 tracking-tight">
-              Transforming the Future of Dentistry with <span className="text-[#3b82f6]">rkclinic</span>
+              Transforming the Future of Dentistry with <span className="text-[#3b82f6]">R.K. Dental Clinic</span>
             </h1>
             <p className="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed">
               Book appointments, track your dental wellness, and stay connected with expert care — all in one place.
@@ -423,9 +423,9 @@ export default function App() {
                   <span className="text-5xl font-serif italic text-[#1e3a8a] leading-none">Rx</span>
                 </div>
                 <div className="text-right">
-                  <h2 className="text-xl font-bold text-[#1e3a8a] uppercase tracking-widest">rkclinic</h2>
-                  <p className="text-[10px] text-gray-500 font-medium tracking-wider mt-1">123 Dental Street, City</p>
-                  <p className="text-[10px] text-gray-500 font-medium tracking-wider">+91 98765 43210</p>
+                  <h2 className="text-xl font-bold text-[#1e3a8a] uppercase tracking-widest">R.K. Dental Clinic</h2>
+                  <p className="text-[10px] text-gray-500 font-medium tracking-wider mt-1">P.L. Lokhande Marg,Gulshan Baug,Opp. Fish Market,Chembur, Mumbai - 400089</p>
+                  <p className="text-[10px] text-gray-500 font-medium tracking-wider">+91 9987342525</p>
                 </div>
               </motion.div>
 
@@ -619,7 +619,7 @@ export default function App() {
         <div className="max-w-[1400px] mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
-              Treatments at <span className="text-[#3b82f6]">rkclinic</span>
+              Treatments at <span className="text-[#3b82f6]">R.K. Dental Clinic</span>
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg">
               Comprehensive dental care tailored to your unique smile, using state-of-the-art technology and expert precision.
@@ -688,8 +688,8 @@ export default function App() {
               {/* Main Image Container */}
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/10 aspect-[4/5] bg-white border border-gray-100 group">
                 <img 
-                  src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800&h=1000" 
-                  alt="Dr. Sarah Mitchell" 
+                  src="/dentist.jpg" 
+                  alt="Meet Your Dentist" 
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
@@ -707,24 +707,22 @@ export default function App() {
                 <span className="text-sm font-bold tracking-widest text-[#3b82f6] uppercase">Meet Your Dentist</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-extrabold text-[#1e3a8a] mb-5 tracking-tight leading-tight">
-                Dr. Sarah Mitchell, DDS
+                Dr. Rajkumar M. Gupta, B.D.S
               </h2>
               <div className="flex flex-wrap items-center gap-2 text-[15px] text-gray-500 mb-6 font-medium">
-                <span>Graduate of UT Austin Dental School</span>
+                <span>Bachelor of Dental Surgery (B.D.S)</span>
                 <span className="text-blue-200">•</span>
-                <span>Member of ADA</span>
-                <span className="text-blue-200">•</span>
-                <span>Invisalign Certified Provider</span>
+                <span>13 Years of Experience</span>
               </div>
               <p className="text-lg text-gray-600 leading-relaxed mb-10">
-                Dr. Mitchell has been transforming smiles for over 15 years. Her gentle approach and passion for patient comfort have made <span className="font-semibold text-[#3b82f6]">rkclinic</span> one of the most trusted dental practices.
+                Dr. Rajkumar M. Gupta has been transforming smiles for over 13 years. His gentle approach and passion for patient comfort have made <span className="font-semibold text-[#3b82f6]">R.K. Dental Clinic</span> one of the most trusted dental practices.
               </p>
               <div className="mt-8">
                 <span 
                   className="text-4xl md:text-5xl text-[#3b82f6] opacity-90 tracking-wider"
                   style={{ fontFamily: "'Brush Script MT', 'Lucida Handwriting', 'Great Vibes', cursive" }}
                 >
-                  Sarah Mitchell
+                  Dr. Rajkumar M. Gupta
                 </span>
               </div>
             </motion.div>
@@ -856,7 +854,7 @@ export default function App() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex items-center gap-2 bg-white/60 backdrop-blur-md w-max px-6 py-3 rounded-2xl mb-8 border border-white shadow-[0_4px_20px_rgba(59,130,246,0.05)]">
-                <span className="text-2xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6]">rkclinic</span>
+                <span className="text-2xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6]">R.K. Dental Clinic</span>
               </div>
               <p className="text-gray-600 text-[15px] leading-relaxed mb-8 font-medium">
                 Transforming smiles with advanced dental care, state-of-the-art technology, and a commitment to your ultimate comfort.
@@ -931,19 +929,25 @@ export default function App() {
                   <div className="p-2.5 rounded-xl bg-white group-hover:bg-[#3b82f6] transition-colors border border-blue-100 shadow-sm mt-0.5">
                     <MapPin className="w-5 h-5 text-[#3b82f6] group-hover:text-white transition-colors" />
                   </div>
-                  <span className="pt-2 leading-relaxed">123 Dental Care Avenue, Medical District, City - 400001</span>
+                  <span className="pt-2 leading-relaxed">P.L. Lokhande Marg,Gulshan Baug,Opp. Fish Market,Chembur, Mumbai - 400089</span>
                 </motion.li>
                 <motion.li whileHover={{ x: 5 }} className="flex items-center gap-4 text-gray-600 font-medium text-[15px] group">
                   <div className="p-2.5 rounded-xl bg-white group-hover:bg-[#3b82f6] transition-colors border border-blue-100 shadow-sm">
                     <Phone className="w-5 h-5 text-[#3b82f6] group-hover:text-white transition-colors" />
                   </div>
-                  <span className="pt-1">+91 98765 43210</span>
+                  <span className="pt-1">+91 9987342525</span>
+                </motion.li>
+                <motion.li whileHover={{ x: 5 }} className="flex items-center gap-4 text-gray-600 font-medium text-[15px] group">
+                  <div className="p-2.5 rounded-xl bg-white group-hover:bg-[#3b82f6] transition-colors border border-blue-100 shadow-sm">
+                    <svg className="w-5 h-5 text-[#3b82f6] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                  </div>
+                  <span className="pt-1">dr.rkdentalclinic@gmail.com</span>
                 </motion.li>
                 <motion.li whileHover={{ x: 5 }} className="flex items-center gap-4 text-gray-600 font-medium text-[15px] group">
                   <div className="p-2.5 rounded-xl bg-white group-hover:bg-[#3b82f6] transition-colors border border-blue-100 shadow-sm">
                     <Calendar className="w-5 h-5 text-[#3b82f6] group-hover:text-white transition-colors" />
                   </div>
-                  <span className="pt-1">Mon - Sun: 9:00 AM - 9:00 PM</span>
+                  <span className="pt-1">10:00am to 2:00pm & 5:00pm to 10:00pm</span>
                 </motion.li>
               </ul>
             </motion.div>
@@ -957,7 +961,7 @@ export default function App() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="pt-8 border-t border-blue-200/50 flex flex-col md:flex-row justify-between items-center gap-6"
           >
-            <p className="text-gray-500 font-medium text-[15px]">© 2026 rkclinic. All rights reserved.</p>
+            <p className="text-gray-500 font-medium text-[15px]">© 2026 R.K. Dental Clinic. All rights reserved.</p>
             <div className="flex gap-6 text-[15px] text-gray-500 font-medium">
               <a href="#" className="hover:text-[#3b82f6] transition-colors">Privacy Policy</a>
               <span className="opacity-30">|</span>
