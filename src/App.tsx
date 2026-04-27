@@ -272,7 +272,7 @@ export default function App() {
         <div className="w-full">
           <div 
             ref={navRef}
-            className="max-w-[1400px] mx-auto flex justify-between items-center w-full px-4 md:px-6 py-2 md:py-3"
+            className="max-w-[1400px] mx-auto flex justify-between items-center w-full px-6 md:px-6 py-2 md:py-3"
           >
             {/* Logo */}
             <div className="flex items-center cursor-pointer hover:scale-105 transition-transform z-10 h-14 lg:h-16 py-1 lg:py-0">
@@ -324,7 +324,7 @@ export default function App() {
 
       {/* Hero Section */}
       <section className="relative bg-[#f0f9ff] overflow-hidden pt-28">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-4 py-10 md:py-16 flex flex-col md:flex-row items-center">
+        <div className="max-w-[1400px] mx-auto px-6 py-10 md:py-16 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 z-10 pr-4 lg:pr-12">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-blue-100 bg-white text-sm font-medium mb-6 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-[#3b82f6] animate-pulse"></span>
@@ -647,7 +647,7 @@ export default function App() {
           <div className="absolute top-[60%] -left-[10%] w-[40%] h-[40%] rounded-full bg-blue-100/50 blur-3xl"></div>
         </div>
 
-        <div className="max-w-[1400px] mx-auto px-4 relative z-10">
+        <div className="max-w-[1400px] mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
               Treatments at <span className="text-[#3b82f6]">R.K. Dental Clinic</span>
@@ -772,7 +772,7 @@ export default function App() {
 
       {/* Smile Gallery Section */}
       <section className="py-20 bg-[#f8fafc] relative overflow-hidden border-t border-gray-200">
-        <div className="max-w-[1400px] mx-auto px-4 relative z-10">
+        <div className="max-w-[1400px] mx-auto px-6 relative z-10">
           <div className="text-center mb-16 relative">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
@@ -1058,7 +1058,7 @@ export default function App() {
           ></motion.div>
         </div>
         
-        <div className="max-w-[1400px] mx-auto px-4 relative z-10">
+        <div className="max-w-[1400px] mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
             {/* Brand Column */}
             <motion.div 
