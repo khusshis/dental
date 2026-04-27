@@ -142,6 +142,8 @@ export default function App() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [ctaFormOpen, setCtaFormOpen] = useState(false);
+  const [ctaForm, setCtaForm] = useState({ name: '', phone: '', service: '', date: '' });
   const navRef = useRef(null);
 
   useEffect(() => {
@@ -846,23 +848,20 @@ export default function App() {
         </div>
       </section>
       {/* CTA Section */}
-      <section className="relative py-20 overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#3b82f6]">
-          {/* Animated floating orbs */}
-          <motion.div 
-            animate={{ scale: [1, 1.3, 1], x: [0, 60, 0], y: [0, -40, 0] }}
-            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-white/5 blur-[80px]"
-          ></motion.div>
-          <motion.div 
-            animate={{ scale: [1, 1.2, 1], x: [0, -50, 0], y: [0, 30, 0] }}
-            transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute bottom-0 left-0 w-[350px] h-[350px] rounded-full bg-white/5 blur-[80px]"
-          ></motion.div>
-          {/* Grid pattern overlay */}
-          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
-        </div>
+      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-[#f0f9ff] via-[#e0f2fe] to-[#dbeafe]">
+        {/* Animated floating orbs */}
+        <motion.div 
+          animate={{ scale: [1, 1.3, 1], x: [0, 60, 0], y: [0, -40, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-blue-200/40 blur-[100px]"
+        ></motion.div>
+        <motion.div 
+          animate={{ scale: [1, 1.2, 1], x: [0, -50, 0], y: [0, 30, 0] }}
+          transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-0 left-0 w-[350px] h-[350px] rounded-full bg-blue-300/30 blur-[100px]"
+        ></motion.div>
+        {/* Dot pattern */}
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle, #1e3a8a 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
 
         <div className="max-w-[900px] mx-auto px-4 relative z-10 text-center">
           <motion.div
@@ -871,27 +870,121 @@ export default function App() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 text-sm font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#3b82f6]/10 border border-[#3b82f6]/20 text-[#3b82f6] text-sm font-semibold mb-6">
               <Sparkles className="w-4 h-4" />
               <span>Premium Dental Care</span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5 tracking-tight">
-              Expert Dental Advice —<br className="hidden md:block" /> <span className="text-blue-200">Book Now!</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1e3a8a] leading-tight mb-5 tracking-tight">
+              Expert Dental Advice —<br className="hidden md:block" /> <span className="text-[#3b82f6]">Book Now!</span>
             </h2>
-            <p className="text-blue-100/80 text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed">
+            <p className="text-gray-600 text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed">
               Don't wait for dental issues to escalate. Get expert consultation and personalized treatment plans today.
             </p>
-            <motion.a
-              href="#appointment-form"
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-3 bg-white text-[#1e3a8a] px-10 py-4.5 font-bold text-lg rounded-full shadow-[0_15px_40px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-300 group"
-            >
-              <span>Get Started</span>
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#3b82f6]/15 group-hover:bg-[#3b82f6] transition-colors duration-300">
-                <ArrowUp className="w-4 h-4 text-[#3b82f6] group-hover:text-white transition-colors duration-300 rotate-[45deg]" />
-              </span>
-            </motion.a>
+
+            {/* Toggle Form */}
+            {!ctaFormOpen ? (
+              <motion.button
+                onClick={() => setCtaFormOpen(true)}
+                whileHover={{ scale: 1.05, y: -3 }}
+                whileTap={{ scale: 0.97 }}
+                className="inline-flex items-center gap-3 bg-[#3b82f6] text-white px-10 py-4 font-bold text-lg rounded-full shadow-[0_8px_30px_rgba(59,130,246,0.3)] hover:bg-[#2563eb] transition-all duration-300 group"
+              >
+                <span>Get Started</span>
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-white/20 group-hover:bg-white/30 transition-colors duration-300">
+                  <ArrowUp className="w-4 h-4 text-white rotate-[45deg]" />
+                </span>
+              </motion.button>
+            ) : (
+              <motion.div
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.4, type: "spring" }}
+                className="max-w-md mx-auto bg-white/80 backdrop-blur-xl rounded-2xl p-8 shadow-[0_20px_60px_rgba(59,130,246,0.12)] border border-blue-100"
+              >
+                <div className="flex justify-between items-center mb-6">
+                  <h3 className="text-xl font-bold text-[#1e3a8a]">Book Appointment</h3>
+                  <button onClick={() => setCtaFormOpen(false)} className="p-1.5 rounded-full hover:bg-gray-100 transition-colors">
+                    <X size={18} className="text-gray-400" />
+                  </button>
+                </div>
+                <form className="flex flex-col gap-5 text-left" onSubmit={(e) => {
+                  e.preventDefault();
+                  if (ctaForm.phone.length !== 10 || !/^\d+$/.test(ctaForm.phone)) {
+                    return;
+                  }
+                  const msg = `🦷 *New Appointment Request*%0A%0A👤 *Name:* ${ctaForm.name}%0A📱 *Phone:* +91 ${ctaForm.phone}%0A🏥 *Service:* ${ctaForm.service || 'Not specified'}%0A📅 *Date:* ${ctaForm.date}%0A%0A_Sent from R.K. Dental Clinic Website_`;
+                  window.open(`https://wa.me/918433856648?text=${msg}`, '_blank');
+                  setCtaForm({ name: '', phone: '', service: '', date: '' });
+                  setCtaFormOpen(false);
+                }}>
+                  {/* Name */}
+                  <div className="group">
+                    <label className="text-[11px] font-bold text-[#1e3a8a] uppercase tracking-wider mb-1 block">Full Name</label>
+                    <input 
+                      type="text" 
+                      value={ctaForm.name}
+                      onChange={(e) => setCtaForm({...ctaForm, name: e.target.value})}
+                      className="w-full px-0 py-1.5 bg-transparent border-0 border-b border-gray-300 focus:outline-none focus:border-[#3b82f6] transition-all text-[#1e3a8a] font-medium"
+                      placeholder="Enter your name"
+                      required
+                    />
+                  </div>
+                  {/* Phone */}
+                  <div className="group">
+                    <label className="text-[11px] font-bold text-[#1e3a8a] uppercase tracking-wider mb-1 block">Mobile Number</label>
+                    <div className="flex gap-2">
+                      <span className="py-1.5 text-gray-500 border-b border-gray-300 text-sm">+91</span>
+                      <input 
+                        type="tel" 
+                        maxLength={10}
+                        value={ctaForm.phone}
+                        onChange={(e) => setCtaForm({...ctaForm, phone: e.target.value.replace(/\D/g, '')})}
+                        className="w-full px-0 py-1.5 bg-transparent border-0 border-b border-gray-300 focus:outline-none focus:border-[#3b82f6] transition-all text-[#1e3a8a] font-medium"
+                        placeholder="10-digit number"
+                        required
+                      />
+                    </div>
+                  </div>
+                  {/* Service */}
+                  <div>
+                    <label className="text-[11px] font-bold text-[#1e3a8a] uppercase tracking-wider mb-1 block">Service Required</label>
+                    <select 
+                      value={ctaForm.service}
+                      onChange={(e) => setCtaForm({...ctaForm, service: e.target.value})}
+                      className="w-full px-0 py-1.5 bg-transparent border-0 border-b border-gray-300 focus:outline-none focus:border-[#3b82f6] transition-all text-[#1e3a8a] font-medium cursor-pointer"
+                    >
+                      <option value="">Select Treatment</option>
+                      <option value="Root Canal Treatment">Root Canal Treatment</option>
+                      <option value="Dental Implants">Dental Implants</option>
+                      <option value="Braces & Aligners">Braces & Aligners</option>
+                      <option value="Teeth Whitening">Teeth Whitening</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  {/* Date */}
+                  <div className="group">
+                    <label className="text-[11px] font-bold text-[#1e3a8a] uppercase tracking-wider mb-1 block">Preferred Date</label>
+                    <input 
+                      type="date" 
+                      value={ctaForm.date}
+                      onChange={(e) => setCtaForm({...ctaForm, date: e.target.value})}
+                      className="w-full px-0 py-1.5 bg-transparent border-0 border-b border-gray-300 focus:outline-none focus:border-[#3b82f6] transition-all text-[#1e3a8a] font-medium cursor-pointer"
+                      required
+                    />
+                  </div>
+                  {/* Submit */}
+                  <motion.button
+                    type="submit"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full bg-[#3b82f6] text-white py-3.5 font-bold rounded-full flex items-center justify-center gap-2 hover:bg-[#2563eb] transition-all shadow-[0_8px_24px_rgba(59,130,246,0.3)] mt-2"
+                  >
+                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 0C5.385 0 0 5.385 0 12.032c0 2.138.56 4.22 1.624 6.06L.234 23.364l5.412-1.42A12.022 12.022 0 0 0 12.032 24c6.646 0 12.03-5.386 12.03-12.033S18.677 0 12.03 0zm5.955 17.15c-.247.697-1.442 1.34-2.028 1.408-.545.064-1.229.176-3.864-.913-3.176-1.31-5.263-4.57-5.422-4.78-.158-.21-1.298-1.722-1.298-3.284 0-1.562.812-2.33 1.101-2.637.288-.308.625-.385.834-.385.208 0 .416.002.604.01.203.008.472-.075.738.568.273.66.932 2.27 1.013 2.436.082.167.136.363.029.576-.107.213-.162.346-.324.536-.16.19-.336.417-.482.553-.16.15-.327.316-.145.629.182.313.806 1.332 1.733 2.158 1.066 1.942 1.842 2.146 2.156.204.313.325.268.448.196.123-.072.585-.683.743-.918.158-.234.316-.195.545-.11.23.086 1.442.68 1.69.816.248.128.388.204.444.315.056.111.056.643-.191 1.34z"/></svg>
+                    Send via WhatsApp
+                  </motion.button>
+                </form>
+              </motion.div>
+            )}
           </motion.div>
         </div>
       </section>
