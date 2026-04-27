@@ -326,15 +326,12 @@ export default function App() {
       <section className="relative bg-[#f0f9ff] overflow-hidden pt-28">
         <div className="max-w-[1400px] mx-auto px-4 py-10 md:py-16 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 z-10 pr-4 lg:pr-12">
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-blue-100 bg-white text-sm font-medium mb-6 shadow-sm">
-              <div className="flex text-yellow-400 gap-0.5">
-                {[1,2,3,4,5].map(i => <svg key={i} className="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>)}
-              </div>
-              <span className="text-gray-400">|</span>
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-blue-100 bg-white text-sm font-medium mb-6 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-[#3b82f6] animate-pulse"></span>
               <span className="text-gray-600">Trusted by <span className="text-[#1e3a8a] font-bold">2,000+</span> patients</span>
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 leading-[1.1] mb-6 tracking-tight">
-              Transforming the Future of Dentistry with <span className="text-[#3b82f6]">R.K. Dental Clinic</span>
+              Transforming the Future of Dentistry with <span className="text-[#3b82f6] whitespace-nowrap">R.K. Dental Clinic</span>
             </h1>
             <p className="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed">
               Book appointments, track your dental wellness, and stay connected with expert care — all in one place.
@@ -1204,14 +1201,14 @@ export default function App() {
         </a>
         <div className="w-px h-12 bg-gradient-to-b from-transparent via-blue-200 to-transparent"></div>
         <button onClick={() => setShowAddressPopup(true)} className="flex flex-col items-center p-2 text-[#1e3a8a] hover:text-[#3b82f6] flex-1 active:scale-95 transition-all">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#6366f1] to-[#4f46e5] flex items-center justify-center mb-1 shadow-[0_4px_12px_rgba(99,102,241,0.3)]">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#3b82f6] to-[#1e3a8a] flex items-center justify-center mb-1 shadow-[0_4px_12px_rgba(59,130,246,0.3)]">
             <MapPin className="w-5 h-5 text-white" />
           </div>
           <span className="text-[10px] font-bold text-center leading-tight">Address</span>
         </button>
         <div className="w-px h-12 bg-gradient-to-b from-transparent via-blue-200 to-transparent"></div>
         <button onClick={() => setShowTimingPopup(true)} className="flex flex-col items-center p-2 text-[#1e3a8a] hover:text-[#3b82f6] flex-1 active:scale-95 transition-all">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#f59e0b] to-[#d97706] flex items-center justify-center mb-1 shadow-[0_4px_12px_rgba(245,158,11,0.3)]">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#3b82f6] to-[#1e3a8a] flex items-center justify-center mb-1 shadow-[0_4px_12px_rgba(59,130,246,0.3)]">
             <Clock className="w-5 h-5 text-white" />
           </div>
           <span className="text-[10px] font-bold text-center leading-tight">Timing</span>
