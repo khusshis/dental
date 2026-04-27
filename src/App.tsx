@@ -246,11 +246,22 @@ export default function App() {
     <div className="min-h-screen bg-[#f8fafc] text-[#333] font-sans pb-20 md:pb-0">
       {/* Header */}
       <motion.header 
-        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl shadow-sm border-b border-blue-200/50 pointer-events-auto"
-        animate={{ 
-          y: isMobile ? (isNavVisible ? 0 : -100) : 0,
-          backgroundColor: ["rgba(240, 249, 255, 0.9)", "rgba(224, 242, 254, 0.9)", "rgba(219, 234, 254, 0.9)", "rgba(240, 249, 255, 0.9)"]
-        }}
+        className={`fixed top-0 left-0 right-0 z-50 pointer-events-auto transition-all duration-500 ${
+          isScrolled || isMenuOpen
+            ? "backdrop-blur-xl shadow-sm border-b border-blue-200/50"
+            : "bg-transparent border-transparent"
+        }`}
+        animate={
+          isScrolled || isMenuOpen
+            ? { 
+                y: isMobile ? (isNavVisible ? 0 : -100) : 0,
+                backgroundColor: ["rgba(240, 249, 255, 0.95)", "rgba(224, 242, 254, 0.95)", "rgba(219, 234, 254, 0.95)", "rgba(240, 249, 255, 0.95)"]
+              }
+            : {
+                y: isMobile ? (isNavVisible ? 0 : -100) : 0,
+                backgroundColor: "rgba(255, 255, 255, 0)"
+              }
+        }
         transition={{ 
           y: { duration: 0.3, ease: "easeInOut" },
           backgroundColor: { duration: 8, repeat: Infinity, ease: "easeInOut" }
@@ -264,7 +275,7 @@ export default function App() {
             {/* Logo */}
             <div className="flex items-center cursor-pointer hover:scale-105 transition-transform z-10 h-14 lg:h-16 py-1 lg:py-0">
               <img src="/logo.png" alt="RK Logo" className="h-full w-auto object-contain drop-shadow-sm lg:hidden" />
-              <img src="/desktop-logo.png" alt="RK Dental Clinic" className="hidden lg:block h-7 xl:h-8 w-auto object-contain drop-shadow-sm" />
+              <img src="/desktop-logo.png" alt="RK Dental Clinic" className="hidden lg:block h-6 xl:h-7 w-auto object-contain drop-shadow-sm" />
             </div>
             
             {/* Desktop Nav & Buttons */}
@@ -444,7 +455,7 @@ export default function App() {
                   <span className="text-5xl font-serif italic text-[#1e3a8a] leading-none">Rx</span>
                 </div>
                 <div className="text-right">
-                  <img src="/desktop-logo.png" alt="R.K. Dental Clinic" className="h-6 ml-auto object-contain mb-1" />
+                  <img src="/desktop-logo.png" alt="R.K. Dental Clinic" className="h-4 ml-auto object-contain mb-1" />
                   <p className="text-[10px] text-gray-500 font-medium tracking-wider mt-1">P.L. Lokhande Marg,Gulshan Baug,Opp. Fish Market,Chembur, Mumbai - 400089</p>
                   <p className="text-[10px] text-gray-500 font-medium tracking-wider">+91 9987342525</p>
                 </div>
