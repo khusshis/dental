@@ -220,18 +220,18 @@ export default function App() {
   ];
 
   const treatments = [
-    { icon: <img src="/RCT.gif" alt="Root Canal Treatment" className="w-20 h-20 object-contain" />, name: "Root Canal\nTreatment (RCT)" },
-    { icon: <img src="/Crowns.gif" alt="Dental Crowns" className="w-20 h-20 object-contain" />, name: "Dental Crowns" },
-    { icon: <img src="/Laser-Treatment-1.gif" alt="Laser Dentistry" className="w-20 h-20 object-contain" />, name: "Laser Dentistry" },
-    { icon: <img src="/Invisible-Braces-1.gif" alt="Clear Aligners" className="w-20 h-20 object-contain" />, name: "Clear Aligners /\nInvisible Braces" },
-    { icon: <img src="/Dental-Fillings-1-1.gif" alt="Dental Fillings" className="w-20 h-20 object-contain" />, name: "Dental Fillings /\nTeeth Fillings" },
-    { icon: <img src="/Wisdom-Tooth-1.gif" alt="Wisdom Teeth" className="w-20 h-20 object-contain" />, name: "Wisdom Teeth\nRemoval" },
-    { icon: <img src="/Braces-2.gif" alt="Dental Braces" className="w-20 h-20 object-contain" />, name: "Dental Braces &\nAligners" },
-    { icon: <img src="/Dental-Implants.gif" alt="Dental Implants" className="w-20 h-20 object-contain" />, name: "Dental Implants /\nTeeth Implants" },
-    { icon: <img src="/Dentures.gif" alt="Dentures" className="w-20 h-20 object-contain" />, name: "Dentures" },
-    { icon: <img src="/Kids-Dentistery.gif" alt="Kids Dentistry" className="w-20 h-20 object-contain" />, name: "Kids Dentistry" },
-    { icon: <img src="/Mouth-ulcers-1-2.gif" alt="Mouth Ulcers" className="w-20 h-20 object-contain" />, name: "Mouth Ulcers" },
-    { icon: <img src="/Gum-Treatment.gif" alt="Gum Treatment" className="w-20 h-20 object-contain" />, name: "Advanced Gum\nTreatment" },
+    { icon: <img src="/RCT.gif" alt="Root Canal Treatment" className="w-24 h-24 object-contain" />, name: "Root Canal\nTreatment (RCT)" },
+    { icon: <img src="/Crowns.gif" alt="Dental Crowns" className="w-24 h-24 object-contain" />, name: "Dental Crowns" },
+    { icon: <img src="/Laser-Treatment-1.gif" alt="Laser Dentistry" className="w-24 h-24 object-contain" />, name: "Laser Dentistry" },
+    { icon: <img src="/Invisible-Braces-1.gif" alt="Clear Aligners" className="w-24 h-24 object-contain" />, name: "Clear Aligners /\nInvisible Braces" },
+    { icon: <img src="/Dental-Fillings-1-1.gif" alt="Dental Fillings" className="w-24 h-24 object-contain" />, name: "Dental Fillings /\nTeeth Fillings" },
+    { icon: <img src="/Wisdom-Tooth-1.gif" alt="Wisdom Teeth" className="w-24 h-24 object-contain" />, name: "Wisdom Teeth\nRemoval" },
+    { icon: <img src="/Braces-2.gif" alt="Dental Braces" className="w-24 h-24 object-contain" />, name: "Dental Braces &\nAligners" },
+    { icon: <img src="/Dental-Implants.gif" alt="Dental Implants" className="w-24 h-24 object-contain" />, name: "Dental Implants /\nTeeth Implants" },
+    { icon: <img src="/Dentures.gif" alt="Dentures" className="w-24 h-24 object-contain" />, name: "Dentures" },
+    { icon: <img src="/Kids-Dentistery.gif" alt="Kids Dentistry" className="w-24 h-24 object-contain" />, name: "Kids Dentistry" },
+    { icon: <img src="/Mouth-ulcers-1-2.gif" alt="Mouth Ulcers" className="w-24 h-24 object-contain" />, name: "Mouth Ulcers" },
+    { icon: <img src="/Gum-Treatment.gif" alt="Gum Treatment" className="w-24 h-24 object-contain" />, name: "Advanced Gum\nTreatment" },
   ];
 
   const scrollToTop = () => {
