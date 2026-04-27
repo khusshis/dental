@@ -752,7 +752,7 @@ export default function App() {
               <div className="mt-8">
                 <span 
                   className="text-4xl md:text-5xl text-[#3b82f6] opacity-90 tracking-wider"
-                  style={{ fontFamily: "'Brush Script MT', 'Lucida Handwriting', 'Great Vibes', cursive" }}
+                  style={{ fontFamily: "'Great Vibes', 'Brush Script MT', 'Lucida Handwriting', cursive" }}
                 >
                   Dr. Rajkumar M. Gupta
                 </span>
